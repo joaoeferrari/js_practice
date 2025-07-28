@@ -234,7 +234,7 @@ console.log(`Factorial of ${numberFac}: ${fac(numberFac)} \n`);
 
 
 function convertTemp(temp){
-    c_toF = (temp * 9/5) + 32;
+    let c_toF = (temp * 9/5) + 32;
     return c_toF;
 }
 
