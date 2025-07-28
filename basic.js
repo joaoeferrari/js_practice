@@ -1,4 +1,3 @@
-
 // 1 Declare a variable to store your name and print it
 console.log('exercise 1');
 let name = 'joao'
@@ -38,7 +37,6 @@ console.log('exercise 4');
 console.log(`e: ${typeof e}`)
 console.log(`f: ${typeof f}`)  
 console.log(`g: ${typeof g} \n`)
-
 
 // 5 Check if a number is even or odd
 
@@ -134,13 +132,113 @@ for (let i = 1; i <= 100; i++) {
     }
 }
 
-// 13 Reverse a string
+// 13 Count the number of vowels in a string
 
-let string = 'hello'
+let vowels = ['a', 'e', 'i', 'o', 'u']
+let word = 'test'
 
-console.log('exercise 13');
-let reversed = '';
-for (let i = string.length - 1; i >= 0; i--) {
-    reversed += string[i];
+console.log('exercise 14');
+for (let i in word) {
+    if (vowels.includes(word[i])) {
+        console.log(`The letter ${word[i]} is a vowel`);
+    } else {
+        console.log(`The letter ${word[i]} is not a vowel`);
+    }
 }
-console.log(reversed);
+
+// 14 Check if a string is a palindrome
+
+let palindrome = 'racecar';
+
+let check1 = [];
+let check2 = [];
+
+for (let i in palindrome) {
+    check1.push(palindrome[i]); // ordem original
+    check2.unshift(palindrome[i]); // ordem invertida
+}
+
+// console.log(check1);
+// console.log(check2);
+
+console.log('exercise 15');
+if (check1.join('') === check2.join('')) { // convert to string
+    console.log(`${palindrome} is a palindrome \n`);
+} else {
+    console.log(`${palindrome} is not a palindrome \n`);
+}
+
+// 15 Find the largest number in an array
+
+let largest = [6,12,3,4,5,6,7,8,9,10];
+let larg_num = largest[0];
+
+for (let i=1; i < largest.length; i++) {
+    if (largest[i] > larg_num) {
+        larg_num = largest[i];
+    }
+} 
+
+console.log('exercise 16');
+console.log(`Largest number: ${larg_num} \n`);
+
+// 16 Reverse an array without using .reverse()
+
+let array = [1,2,3,4,5];
+let arrayReversed = [];
+
+for (let i in array){
+    arrayReversed.unshift(array[i]);
+}
+
+console.log('exercise 17');
+console.log(`Reversed array: ${arrayReversed} \n`);
+
+// 17 Remove duplicates from an array
+
+let arrayDup = [1,2,3,4,5,1,2,3];
+let uniqueArray = [];
+
+for (let i in arrayDup) {
+    if (!uniqueArray.includes(arrayDup[i])) {
+        uniqueArray.push(arrayDup[i]);
+    }
+}
+
+console.log('exercise 18');
+console.log(`Unique array: ${uniqueArray} \n`);
+
+// 18 Sort an array in ascending and descending order
+
+let arraySort = [5,3,8,1,2];
+
+let ascendindArray = [...arraySort].sort((a, b) => a - b); //spread operator to avoid modifying the original array
+let descendingArray = [...arraySort].sort((a, b) => b - a); 
+console.log('exercise 19');
+console.log(`Ascending order: ${ascendindArray} \n`);
+console.log(`Descending order: ${descendingArray} \n`);
+
+// 19 Write a function to calculate the factorial of a number
+
+function fac(number) {
+    if (number === 0 || number === 1) {
+        return 1;
+    } else {
+        return number * fac(number - 1);
+    }
+} 
+
+let numberFac = 5;
+console.log('exercise 20');
+console.log(`Factorial of ${numberFac}: ${fac(numberFac)} \n`);
+
+
+function convertTemp(temp){
+    c_toF = (temp * 9/5) + 32;
+    return c_toF;
+}
+
+console.log('exercise 21');
+console.log(`Celsius to F°: ${convertTemp(30)}`)
+
+// 20 Write a function that checks if a number is prime
